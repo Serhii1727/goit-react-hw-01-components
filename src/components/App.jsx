@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { FriendList } from './FriendList/FriendList';
 import { FriendListItem } from './FriendListItem/FriendListItem';
 import { Profile } from './Profile/Profile';

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+//import styled from 'styled-components'
 import { FriendList } from './FriendList/FriendList';
 import { FriendListItem } from './FriendListItem/FriendListItem';
 import { Profile } from './Profile/Profile';
@@ -14,15 +14,15 @@ console.log(data);
 console.log(friends);
 console.log(transactions);
 
-export const App = () => {
+export default function App() {
   return (
     <div>
       <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
+        userName={user.username}
+        userTag={user.tag}
+        userLocation={user.location}
+        userAvatar={user.avatar}
+        userStats={user.stats}
       />
       <Statistics />
       <FriendList />

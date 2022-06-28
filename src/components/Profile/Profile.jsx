@@ -1,28 +1,40 @@
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+import PropTypes from 'prop-types';
+import defaultUserAvatar from '../../defaultUserAvatar.jpg'
+
+export const Profile = ({ userName, userTag, userLocation, userAvatar = defaultUserAvatar, userStats }) => {
+    const { followers, views, likes } = userStats;
     return <div>
         <div>
             <img
-                src={avatar}
+                src={userAvatar}
                 alt="User avatar"
             />
-            <p>{username}</p>
-            <p>{tag}</p>
-            <p>{location}</p>
+            <p>{userName}</p>
+            <p>{userTag}</p>
+            <p>{userLocation}</p>
         </div>
 
         <ul>
             <li>
                 <span>Followers</span>
-                <span>{stats.followers}</span>
+                <span>{followers}</span>
             </li>
             <li>
                 <span>Views</span>
-                <span>{stats.views}</span>
+                <span>{views}</span>
             </li>
             <li>
                 <span>Likes</span>
-                <span>{stats.likes}</span>
+                <span>{likes}</span>
             </li>
         </ul>
     </div>
+}
+
+Profile.propTypes = {
+    userName: PropTypes.string.isRequired,
+    userTag: PropTypes.string.isRequired,
+    userLocation: PropTypes.string.isRequired,
+    userAvatar: PropTypes.string.isRequired,
+    userStats: PropTypes.object.isRequired,
 }

@@ -1,15 +1,13 @@
 //import styled from 'styled-components'
 import { FriendList } from './FriendList/FriendList';
-import { FriendListItem } from './FriendListItem/FriendListItem';
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 import user from '../user-info-json/user.json';
-import friends from '../user-info-json/friends';
+import data from '../user-info-json/data.json';
+import friends from '../user-info-json/friends.json';
 import transactions from '../user-info-json/transactions.json'
 
-console.log(friends);
-console.log(transactions);
 
 export default function App() {
 
@@ -22,11 +20,15 @@ export default function App() {
         userAvatar={user.avatar}
         userStats={user.stats}
       />
-      <Statistics title="Upload stats" />
-
-      <FriendList />
-      <FriendListItem />
-      <TransactionHistory />
+      <Statistics
+        title="Upload stats"
+        stats={data} />
+      <FriendList
+        friendsList={friends}
+      />
+      <TransactionHistory
+        items={transactions}
+      />
     </div>
 
   );

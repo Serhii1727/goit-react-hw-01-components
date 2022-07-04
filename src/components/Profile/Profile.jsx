@@ -20,7 +20,7 @@ export const Profile = ({ userName, userTag, userLocation, userAvatar = defaultU
                 {userName}
             </p>
             <p className='user-tag'>
-                {userTag}
+                @{userTag}
             </p>
             <p className='user-location'>
                 {userLocation}

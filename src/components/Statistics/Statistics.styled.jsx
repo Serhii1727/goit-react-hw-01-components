@@ -36,7 +36,6 @@ export const ListStats = styled.ul`
         text-align: center;
         background-color: rgb(137, 240, 240);
 
-
     .label {
         font-weight: 600;
         color: white;

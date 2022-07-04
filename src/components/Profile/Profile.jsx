@@ -1,42 +1,48 @@
 import PropTypes from 'prop-types';
-import { Container, ContainerUser } from './Profile.styled.jsx'
+import { Container, ContainerUser, UserAvatar, ProfileInfo, ProfileInfoItem } from './Profile.styled.jsx'
 
 import defaultUserAvatar from '../../defaultUserAvatar.jpg'
 
 export const Profile = ({ userName, userTag, userLocation, userAvatar = defaultUserAvatar, userStats }) => {
     const { followers, views, likes } = userStats;
-    return <Container>
-        <ContainerUser>
+    return <Container className='container'>
+        <ContainerUser className='container-user'>
+            <UserAvatar className='user-avatar'>
+                <img
+                    src={userAvatar}
+                    alt="User avatar"
+                    width={75}
+                    height={75}
 
-            <img
-                src={userAvatar}
-                alt="User avatar"
-                width={50}
-                height={50}
+                />
+            </UserAvatar>
+            <p className='user-name'>
+                {userName}
+            </p>
+            <p className='user-tag'>
+                {userTag}
+            </p>
+            <p className='user-location'>
+                {userLocation}
+            </p>
 
-            />
 
-            <p>{userName}</p>
-            <p>{userTag}</p>
-            <p>{userLocation}</p>
-
-
-            <ul>
-                <li>
-                    <span>Followers</span>
-                    <span>{followers}</span>
-                </li>
-                <li>
-                    <span>Views</span>
-                    <span>{views}</span>
-                </li>
-                <li>
-                    <span>Likes</span>
-                    <span>{likes}</span>
-                </li>
-            </ul>
+            <ProfileInfo className='profile-info'>
+                <ProfileInfoItem className='profile-inf-item'>
+                    <span className='name'>Followers</span>
+                    <span className='amount'>{followers}</span>
+                </ProfileInfoItem>
+                <ProfileInfoItem className='profile-inf-item'>
+                    <span className='name'>Views</span>
+                    <span className='amount'>{views}</span>
+                </ProfileInfoItem>
+                <ProfileInfoItem className='profile-inf-item'>
+                    <span className='name'>Likes</span>
+                    <span className='amount'>{likes}</span>
+                </ProfileInfoItem>
+            </ProfileInfo>
         </ContainerUser>
-    </Container>
+    </Container >
 }
 
 Profile.propTypes = {

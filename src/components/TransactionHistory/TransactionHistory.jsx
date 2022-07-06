@@ -12,12 +12,12 @@ export const TransactionHistory = ({ items }) => {
         </TheadTable>
 
         <BodyTable className='table-tbody'>
-            {items.map(el => {
+            {items.map(({ id, type, amount, currency }) => {
                 return (
-                    <tr key={el.id}>
-                        <td>{el.type}</td>
-                        <td>{el.amount}</td>
-                        <td>{el.currency}</td>
+                    <tr key={id}>
+                        <td>{type}</td>
+                        <td>{amount}</td>
+                        <td>{currency}</td>
                     </tr>
                 )
 

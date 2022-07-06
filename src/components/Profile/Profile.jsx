@@ -50,5 +50,9 @@ Profile.propTypes = {
     userTag: PropTypes.string.isRequired,
     userLocation: PropTypes.string.isRequired,
     userAvatar: PropTypes.string.isRequired,
-    userStats: PropTypes.object.isRequired,
+    userStats: PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+    }),
 }

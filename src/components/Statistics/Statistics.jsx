@@ -4,7 +4,7 @@ import { Section, Title, ListStats } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
     return <Section className='section'>
-        {title ? <Title className='title'>{title}</Title> : undefined}
+        {title && <Title className='title'>{title}</Title>}
         <ListStats className='list-stats'>
             {stats.map(el => {
                 return (
